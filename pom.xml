@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.iftm</groupId>
-	<artifactId>modelo_api_rest</artifactId>
+	<artifactId>organiza_estabelecimento</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>modelo_api_rest</name>
+	<name>organiza_estabelecimento</name>
 	<description>
 		Projeto Básico para a disciplina de Projeto e Desenvolvimento de Sistemas
 	</description>	

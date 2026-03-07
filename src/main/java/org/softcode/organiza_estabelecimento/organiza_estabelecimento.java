@@ -1,13 +1,13 @@
-package org.iftm.modelo_api_rest;
+package org.softcode.organiza_estabelecimento;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ModeloApiRestApplication {
+public class organiza_estabelecimento {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ModeloApiRestApplication.class, args);
+		SpringApplication.run(organiza_estabelecimento.class, args);
 	}
 
 }
