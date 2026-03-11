@@ -1,5 +1,4 @@
 package org.softcode.organiza_estabelecimento.entity;
-
 import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,20 +6,18 @@ import jakarta.persistence.Table;
 
 @Entity
 
-@Table(name = "tb_estoque")
-public class Estoque implements Serializable {
+@Table(name = "tb_perfil")
+public class Perfil implements Serializable {
 private static final long serialVersionUID = 1L;
 
     @Id
+
     private int id;
     private String nome;
-    private int quantidade;
 
-    // Construtor
-    public Estoque(int id, String nome, int quantidade) {
+    public Perfil(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.quantidade = quantidade;
     }
 
     // Getters e Setters
@@ -40,11 +37,4 @@ private static final long serialVersionUID = 1L;
         this.nome = nome;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
 }
