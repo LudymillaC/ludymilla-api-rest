@@ -7,24 +7,35 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 
-@Entity
-@Table(name = "tb_usuarios")
-public class Usuario implements Serializable {
-private static final long serialVersionUID = 1L;
+    @Entity
 
-    @Id    
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Table(name = "tb_usuarios")
+    public class Usuario implements Serializable {
+    private static final long serialVersionUID = 1L; 
+
+        @Id    
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
     //
     private String nome;
     private String email;
     private String senha;
+    private String cpf;
+    private String contato;
+    private String permissoes;
+    private String condicao;
 
-    public Usuario(Long id, String nome, String email, String senha) {
+    public Usuario(Long id, String nome, String email, String senha, String cpf, String contato , String permissoes, String condicao) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.cpf = cpf;
+        this.contato = contato;
+        this.permissoes = permissoes;
+        this.condicao = condicao;
+
+        
     }
 
     // Getters e Setters
@@ -59,6 +70,39 @@ private static final long serialVersionUID = 1L;
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getContato() {
+        return contato;
+    }
+
+    public void setContato(String contato) {
+        this.contato = contato;
+    }
+
+    public String getPermissoes() {
+        return permissoes;
+    }
+
+    public void setPermissoes(String permissoes) {
+        this.permissoes = permissoes;
+    }
+
+    public String getCondicao() {
+        return condicao;
+    }
+
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
+    }
+
     @Override
     public String toString() {
         return "Usuarios{" +

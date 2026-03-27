@@ -17,18 +17,21 @@ import jakarta.persistence.Table;
         private Long id;
     //
     private String nome;
+    private String descricao;
 
-    public Perfil(int id, String nome) {
+
+    public Perfil(Long id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
+        this.descricao = descricao;
     }
 
     // Getters e Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,6 +41,14 @@ import jakarta.persistence.Table;
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 }
