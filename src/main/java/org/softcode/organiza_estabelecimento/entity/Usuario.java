@@ -1,22 +1,26 @@
 package org.softcode.organiza_estabelecimento.entity;
-
 import java.io.Serializable;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "tb_usuarios")
-public class Usuarios implements Serializable {
+public class Usuario implements Serializable {
 private static final long serialVersionUID = 1L;
-    @Id
-    private int id;
+
+    @Id    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    //
     private String nome;
     private String email;
     private String senha;
 
-    public Usuarios(int id, String nome, String email, String senha) {
+    public Usuario(Long id, String nome, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -24,11 +28,11 @@ private static final long serialVersionUID = 1L;
     }
 
     // Getters e Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -55,4 +59,14 @@ private static final long serialVersionUID = 1L;
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    @Override
+    public String toString() {
+        return "Usuarios{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
+
 }

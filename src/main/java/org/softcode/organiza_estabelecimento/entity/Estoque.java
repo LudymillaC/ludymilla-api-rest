@@ -1,20 +1,23 @@
 package org.softcode.organiza_estabelecimento.entity;
-
 import java.io.Serializable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+    @Entity
 
-@Table(name = "tb_estoque")
-public class Estoque implements Serializable {
-private static final long serialVersionUID = 1L;
+    @Table(name = "tb_estoque")
+    public class Estoque implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    @Id
-    private int id;
-    private String nome;
-    private int quantidade;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        //
+        private String nome;
+        private int quantidade;
 
     // Construtor
     public Estoque(int id, String nome, int quantidade) {
