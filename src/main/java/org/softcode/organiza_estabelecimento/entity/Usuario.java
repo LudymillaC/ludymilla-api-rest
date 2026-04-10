@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
     @Entity
 
-    @Table(name = "tb_usuarios")
+    @Table(name = "tb_usuario")
     public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L; 
 
@@ -25,12 +25,11 @@ import jakarta.persistence.Table;
     private String permissoes;
     private String condicao;
 
-    public Usuario(Long id, String nome, String email, String senha, String cpf, String contato , String permissoes, String condicao) {
+    public Usuario(Long id, String nome, String email, String senha, String contato , String permissoes, String condicao) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.cpf = cpf;
         this.contato = contato;
         this.permissoes = permissoes;
         this.condicao = condicao;
@@ -60,6 +59,7 @@ import jakarta.persistence.Table;
     }
 
     public void setEmail(String email) {
+        validaEmail(email);
         this.email = email;
     }
 
@@ -111,6 +111,12 @@ import jakarta.persistence.Table;
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
                 '}';
+    }
+
+    public void validaEmail(String email) {
+        if (email == null || !email.contains("@")) {
+            throw new IllegalArgumentException("Email inválido: " + email);
+        }
     }
 
 }
