@@ -24,6 +24,7 @@ import jakarta.persistence.Table;
     private String contato;
     private String permissoes;
     private String condicao;
+    
 
     public Usuario(Long id, String nome, String email, String senha, String contato , String permissoes, String condicao) {
         this.id = id;
