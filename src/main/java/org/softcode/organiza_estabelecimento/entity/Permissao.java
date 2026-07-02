@@ -11,32 +11,40 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-    @Entity
-
-    @Table(name = "tb_perfil")
-    public class Perfil implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-    //
+public class Permissao {
+    private int id;
     private String nome;
     private String descricao;
+    private Object acao;
 
-
-    public Perfil(Long id, String nome, String descricao) {
+    /**
+     * @param id
+     * @param nome
+     * @param descricao
+     * @param acao
+     */
+    public Permissao(int id, String nome, String descricao, Boolean acao){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+       
+        
+    }
+
+    public Object getAcao() {
+        return acao;
+    }
+
+    public void setAcao(Object acao) {
+        this.acao = acao;
     }
 
     // Getters e Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

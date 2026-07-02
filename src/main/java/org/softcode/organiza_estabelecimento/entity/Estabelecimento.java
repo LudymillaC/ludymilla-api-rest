@@ -11,6 +11,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-public class Pulseira {
+public class Estabelecimento {
 
 }
