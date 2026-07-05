@@ -1,31 +1,34 @@
 package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
     @Entity
-
     @Table(name = "tb_usuario")
     public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L; 
-
         @Id    
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-    //
+    private Long id;
+    @Column (name = "Nome")
     private String nome;
+    @Column (name = "Email")
     private String email;
+    @Column (name = "Senha")
     private String senha;
+    @Column (name = "Cpf")
     private String cpf;
+    @Column (name = "Contato")
     private String contato;
+    @Column (name = "Permissoes")
     private String permissoes;
+    @Column (name = "Condicao")
     private String condicao;
     
-
     public Usuario(Long id, String nome, String email, String senha, String contato , String permissoes, String condicao) {
         this.id = id;
         this.nome = nome;
@@ -34,8 +37,6 @@ import jakarta.persistence.Table;
         this.contato = contato;
         this.permissoes = permissoes;
         this.condicao = condicao;
-
-        
     }
 
     // Getters e Setters

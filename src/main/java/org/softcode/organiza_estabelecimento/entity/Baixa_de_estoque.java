@@ -1,8 +1,6 @@
 package org.softcode.organiza_estabelecimento.entity;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -12,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_baixa_de_estoque")
@@ -42,18 +41,21 @@ public class Baixa_de_estoque implements Serializable {
     @JoinColumn(name = "id_colaborador", nullable = true, foreignKey = @ForeignKey(name = "fk_baixa_colaborador"))
     private Colaborador colaborador;
 
+    @Transient
+    private Colaborador data_baixa_estoque;
+
     // Construtores
     public Baixa_de_estoque() {
     }
 
-    public Baixa_de_estoque(int quantidade, String motivo, LocalDateTime dataBaixa, 
-                            String observacoes, Estoque estoque, Colaborador colaborador) {
+    public Baixa_de_estoque(int quantidade, String motivo, LocalDateTime dataBaixa, String observacoes, Estoque estoque, Colaborador colaborador, Colaborador data_baixa_estoque) {
         this.quantidade = quantidade;
         this.motivo = motivo;
         this.dataBaixa = dataBaixa;
         this.observacoes = observacoes;
         this.estoque = estoque;
         this.colaborador = colaborador;
+        this.data_baixa_estoque = data_baixa_estoque;
     }
 
     // Getters e Setters

@@ -1,17 +1,35 @@
 package org.softcode.organiza_estabelecimento.entity;
+import java.io.Serializable;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class Preco {
-    private int id;
+@Entity
+@Table(name = "tb_preco")
+public class Preco implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
     private double valor;
 
-    public Preco(int id, String nome, double valor) {
+    public Preco() {
+    }
+
+    public Preco(Integer id, String nome, double valor) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -35,5 +53,4 @@ public class Preco {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
 }

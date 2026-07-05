@@ -27,7 +27,7 @@ public class Caixa_saida implements Serializable {
     @Column(name = "data_saida", nullable = false)
     private LocalDateTime dataSaida;
 
-    @Column(name = "preco_unitario", nullable = false, precision = 10, scale = 2)
+    @Column(name = "preco_unitario", nullable = false)
     private BigDecimal precoUnitario;
 
     @Column(name = "motivo", length = 100, nullable = false)
@@ -48,7 +48,7 @@ public class Caixa_saida implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_colaborador", nullable = true, foreignKey = @ForeignKey(name = "fk_saida_colaborador"))
-    private Colaborador colaborador;
+    private Colaborador id_colaborador;
 
     // Construtores
     public Caixa_saida() {
@@ -56,7 +56,7 @@ public class Caixa_saida implements Serializable {
 
     public Caixa_saida(int quantidade, LocalDateTime dataSaida, BigDecimal precoUnitario,
                        String motivo, String destinatario, String numeroDocumento,
-                       String observacoes, Estoque estoque, Colaborador colaborador) {
+                       String observacoes, Estoque estoque, Colaborador id_colaborador) {
         this.quantidade = quantidade;
         this.dataSaida = dataSaida;
         this.precoUnitario = precoUnitario;
@@ -65,7 +65,7 @@ public class Caixa_saida implements Serializable {
         this.numeroDocumento = numeroDocumento;
         this.observacoes = observacoes;
         this.estoque = estoque;
-        this.colaborador = colaborador;
+        this.id_colaborador = id_colaborador;
     }
 
     // Getters e Setters
@@ -141,11 +141,11 @@ public class Caixa_saida implements Serializable {
         this.estoque = estoque;
     }
 
-    public Colaborador getColaborador() {
-        return colaborador;
+    public Colaborador getId_colaborador() {
+        return id_colaborador;
     }
 
-    public void setColaborador(Colaborador colaborador) {
-        this.colaborador = colaborador;
+    public void setId_colaborador(Colaborador id_colaborador) {
+        this.id_colaborador = id_colaborador;
     }
 }

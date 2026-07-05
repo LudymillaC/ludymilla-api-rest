@@ -1,9 +1,7 @@
 package org.softcode.organiza_estabelecimento.entity;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.math.BigDecimal;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -29,7 +27,7 @@ public class Caixa_entrada implements Serializable {
     @Column(name = "data_entrada", nullable = false)
     private LocalDateTime dataEntrada;
 
-    @Column(name = "preco_unitario", nullable = false, precision = 10, scale = 2)
+    @Column(name = "preco_unitario", nullable = false)
     private BigDecimal precoUnitario;
 
     @Column(name = "fornecedor", length = 150)
@@ -53,9 +51,7 @@ public class Caixa_entrada implements Serializable {
     public Caixa_entrada() {
     }
 
-    public Caixa_entrada(int quantidade, LocalDateTime dataEntrada, BigDecimal precoUnitario,
-                         String fornecedor, String numeroNotaFiscal, String observacoes,
-                         Estoque estoque, Colaborador colaborador) {
+    public Caixa_entrada(int quantidade, LocalDateTime dataEntrada, BigDecimal precoUnitario,String fornecedor, String numeroNotaFiscal, String observacoes, Estoque estoque, Colaborador colaborador) {
         this.quantidade = quantidade;
         this.dataEntrada = dataEntrada;
         this.precoUnitario = precoUnitario;

@@ -1,37 +1,47 @@
 package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_produto")
-public class Produto implements Serializable {
+@Table(name = "tb_permissao")
+public class Permissao implements Serializable {
     private static final long serialVersionUID = 1L;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
     private int id;
-
-    @Column(name = "Nome", nullable = false)
+    @Column(name = "Nome")
     private String nome;
-
     @Column(name = "Descricao")
     private String descricao;
+    @Column(name = "Acao")
+    private String acao;
 
-    public Produto() {
-    }
-
-    public Produto(int id, String nome, String descricao) {
+    /**
+     * @param id
+     * @param nome
+     * @param descricao
+     * @param acao
+     */
+    public Permissao(int id, String nome, String descricao, Boolean acao){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+       
+        
     }
 
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
+
+    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -55,4 +65,5 @@ public class Produto implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
 }
