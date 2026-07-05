@@ -5,12 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.16</version>
+        <version>3.1.6</version>
         <relativePath/>
     </parent>
     <groupId>org.iftm</groupId>
     <artifactId>organiza_estabelecimento</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>organiza_estabelecimento</name>
     <description>Projeto Básico para a disciplina de Projeto e Desenvolvimento de Sistemas</description>
     <properties>
