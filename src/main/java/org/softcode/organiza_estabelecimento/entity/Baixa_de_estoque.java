@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_baixa_de_estoque")
@@ -40,8 +41,7 @@ public class Baixa_de_estoque implements Serializable {
     @JoinColumn(name = "id_colaborador", nullable = true, foreignKey = @ForeignKey(name = "fk_baixa_colaborador"))
     private Colaborador colaborador;
 
-    @ManyToOne
-    @JoinColumn(name = "id_colaborador", nullable = true, foreignKey = @ForeignKey(name = "fk_baixa_colaborador"))
+    @Transient
     private Colaborador data_baixa_estoque;
 
     // Construtores

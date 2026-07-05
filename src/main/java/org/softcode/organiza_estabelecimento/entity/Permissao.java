@@ -17,7 +17,7 @@ public class Permissao implements Serializable {
     @Column(name = "Descricao")
     private String descricao;
     @Column(name = "Acao")
-    private Object acao;
+    private String acao;
 
     /**
      * @param id
@@ -33,11 +33,11 @@ public class Permissao implements Serializable {
         
     }
 
-    public Object getAcao() {
+    public String getAcao() {
         return acao;
     }
 
-    public void setAcao(Object acao) {
+    public void setAcao(String acao) {
         this.acao = acao;
     }
 

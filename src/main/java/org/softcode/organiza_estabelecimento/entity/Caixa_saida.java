@@ -27,7 +27,7 @@ public class Caixa_saida implements Serializable {
     @Column(name = "data_saida", nullable = false)
     private LocalDateTime dataSaida;
 
-    @Column(name = "preco_unitario", nullable = false, precision = 10, scale = 2)
+    @Column(name = "preco_unitario", nullable = false)
     private BigDecimal precoUnitario;
 
     @Column(name = "motivo", length = 100, nullable = false)

@@ -19,7 +19,7 @@ public class Pedido implements Serializable {
     @Column(name = "Descricao")
     private String descricao;
 
-    @Column(name = "Valor", precision = 10, scale = 2)
+    @Column(name = "Valor")
     private double valor;
 
     public Pedido(int id, String descricao, double valor) {
