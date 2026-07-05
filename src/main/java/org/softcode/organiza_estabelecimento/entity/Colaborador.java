@@ -1,14 +1,11 @@
 package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,16 +16,27 @@ public class Colaborador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column (name = "Matricula")
     private String matricula;
+    @Column (name = "Nome")
     private String nome;
+    @Column (name = "Cargo")
     private String cargo;
+    @Column (name = "Estabelecimento")
     private String estabelecimento;
+    @Column (name = "Data")
     private String data;
+    @Column (name = "Departamento")
     private String departamento;
+    @Column (name = "Tipo_Contrato")
     private String tipoContrato;
+    @Column (name = "Estado")
     private String estado;
+    @Column (name = "Data_admissao")
     private String data_admissao;
+    @Column (name = "Periodo")
     private String periodo;
+    @Column (name = "Servico")
     private String servico;
     
     public Colaborador(int id, String nome, String cargo, String matricula, String estabelecimento, String data, String departamento, String tipoContrato, String estado, String data_admissao, String periodo, String servico) {

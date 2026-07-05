@@ -4,15 +4,12 @@ package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
@@ -31,20 +28,28 @@ import jakarta.persistence.Table;
     //Atributos da entidade (correspondem às colunas da tabela no banco de dados)
     private int id;
     //Código da mesa associada à comanda (Relacionamento ManyToOne)
+    @Column(name = "Cod_mesa")
     private String cod_mesa;
     //Pedidos realizados na comanda (Ex: "2x Coca-Cola, 1x Pizza")
+    @Column(name = "Pedidos")
     private String pedidos;
     //Subtotal da comanda
+    @Column(name = "Subtotal")
     private BigDecimal subtotal;
     //Estabelecimento onde a comanda foi realizada
+    @Column(name = "Estabelecimento")
     private String estabelecimento;
     //Data da realização da comanda
+    @Column(name = "Data")
     private LocalDate data;
     //Hora da realização da comanda
+    @Column(name = "Hora")
     private LocalTime hora;
     //Status da comanda (ex: aberta, fechada, cancelada)    
+    @Column(name = "Status")
     private String status;
     //Informação sobre o estoque relacionada à comanda
+    @Column(name = "Estoque")
     private boolean estoque;
 
     public Comanda() {
@@ -133,17 +138,15 @@ import jakarta.persistence.Table;
     public void setEstoque(boolean estoque) {
         this.estoque = estoque;
     }   
-    }
+    
 
     public Colaborador getId_colaborador() {
-        return id_colaborador;
+        return getId_colaborador();
     }
 
     public void setId_colaborador(Colaborador id_colaborador) {
-        this.id_colaborador = id_colaborador;
     }
-
-    private Colaborador id_colaborador;
+ }
 
     
 

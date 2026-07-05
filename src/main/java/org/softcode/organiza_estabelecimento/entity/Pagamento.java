@@ -1,19 +1,24 @@
 package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;/
+import jakarta.persistence.Table;
 
-public class Pagamento {
+@Entity
+@Table(name = "tb_pagamento")
+public class Pagamento implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column (name = "Metodo")
     private String metodo;
+    @Column (name = "Valor")
     private double valor;
 
     public Pagamento(int id, String metodo, double valor) {

@@ -1,15 +1,5 @@
 package org.softcode.organiza_estabelecimento.entity;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+
 
 class Usuario_test {
     public static void main(String[] args) {
@@ -25,5 +15,7 @@ class Usuario_test {
         System.out.println("Permissões: " + usuario.getPermissoes());
         System.out.println("Condição: " + usuario.getCondicao());
         // poderá ter dois tipos de validação no cpf, uma para verificar se o formato é válido e outra para verificar se o cpf já existe no sistema na camada de banco de dados, já na camada service será validado se na receita federal o cpf é válido, para isso será necessário fazer uma integração com a receita federal, utilizando a API disponibilizada por eles.
+    
+        
     }
 }

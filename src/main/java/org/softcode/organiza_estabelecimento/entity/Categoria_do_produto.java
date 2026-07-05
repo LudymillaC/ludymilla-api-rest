@@ -1,5 +1,7 @@
 package org.softcode.organiza_estabelecimento.entity;
 import java.io.Serializable;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,7 @@ import jakarta.persistence.Table;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
+        @Column
         private String nome;
 
     public Categoria_do_produto(int id, String nome) {
